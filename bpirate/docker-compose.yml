@@ -1,0 +1,39 @@
+version: "3"
+services:
+  official:
+    image: stephenwu2019/official:latest
+    restart: always
+    ports:
+      - "3008:80"
+    networks:
+      - webnet
+  dapps:
+    image: stephenwu2019/dapps:latest
+    ports:
+      - "3006:80"
+    restart: always
+    networks:
+      - webnet
+  financial:
+    image: stephenwu2019/financial:latest
+    ports:
+      - "3000:80"
+    restart: always
+    networks:
+      - webnet
+  worldhouse:
+    image: stephenwu2019/worldhouse:latest
+    ports:
+      - "3001:80"
+    restart: always
+    networks:
+      - webnet
+  bearchild:
+    image: stephenwu2019/bearchild:latest
+    ports:
+      - "3005:80"
+    restart: always
+    networks:
+      - webnet
+networks:
+  webnet:
