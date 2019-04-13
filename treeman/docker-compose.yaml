@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  treeman-app:
+    image: stephenwu2019/treeman-app:latest
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - webnet
+  treeman:
+    build: .
+    image: stephenwu2019/treeman:latest
+    restart: always
+    ports:
+      - "20000:20000"
+    networks:
+      - webnet
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - /private/dockervol/mongo:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 88888888
+    networks:
+      - webnet
+networks:
+  webnet:
