@@ -5,7 +5,7 @@ services:
     image: stephenwu2019/treeman-app:latest
     restart: always
     ports:
-      - "3000:3000"
+      - "10000:3000"
     networks:
       - webnet
   treeman:
