@@ -6,7 +6,7 @@ services:
     command: v2ray -config=/etc/v2ray/config.json
     ports:
       - "9002:16823"
-    volumns:
+    volumes:
       - ./config.json:/etc/v2ray/config.json
   v2ray2:
     image: v2ray/official
@@ -14,5 +14,5 @@ services:
     command: v2ray -config=/etc/v2ray/config.json
     ports:
       - "9003:16823"
-    volumns:
+    volumes:
       - ./config.json:/etc/v2ray/config.json
