@@ -6,7 +6,7 @@ yum update -y
 # install docker
 yum install -y yum-utils device-mapper-persistent-data lvm2
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum install docker-ce-17.12.1.ce
+yum install -y docker-ce-17.12.1.ce
 
 # docker service
 systemctl start docker
