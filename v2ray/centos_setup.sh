@@ -19,5 +19,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # firewall
 firewall-cmd --zone=public --add-port=9002/tcp --permanent 
 firewall-cmd --zone=public --add-port=9003/tcp --permanent 
+firewall-cmd --zone=public --add-port=8080/tcp --permanent 
+firewall-cmd --zone=public --add-port=8081/tcp --permanent 
 firewall-cmd --reload
 firewall-cmd --zone=public --list-ports
